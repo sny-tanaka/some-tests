@@ -18,9 +18,6 @@
   // モノレポ対応：プロジェクト間で同じ依存関係を1つのPRにまとめる
   "additionalBranchPrefix": "",
   
-  // 同時に作成されるPRの上限
-  "prConcurrentLimit": 10,
-  
   "packageRules": [
     {
       "matchManagers": ["npm"],
