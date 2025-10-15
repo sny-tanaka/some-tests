@@ -10,8 +10,10 @@
   // スケジュール設定
   "timezone": "Asia/Tokyo",
   "schedule": [
-    "before 6am on wednesday"  // 水曜日の6時前に実行
+    "before 5pm on wednesday"  // 水曜日の6時前に実行
   ],
+  "automerge": false,  // 自動マージを無効化
+  "dependencyDashboard": false,  // 依存関係ダッシュボードを有効化
   
   // モノレポ対応：プロジェクト間で同じ依存関係を1つのPRにまとめる
   "additionalBranchPrefix": "",
