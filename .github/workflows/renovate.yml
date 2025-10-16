@@ -15,3 +15,4 @@ jobs:
               env:
                   RENOVATE_USERNAME: 'renovate[bot]'
                   RENOVATE_REPOSITORIES: 'sny-tanaka/some-tests'
+                  LOG_LEVEL: 'debug'

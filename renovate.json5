@@ -4,7 +4,6 @@
   // 推奨設定とモノレポ向けグループ化プリセットを継承
   "extends": [
     "config:recommended",
-    "group:monorepos"  // React、Next.js、Babel、Jestなどを自動的にグループ化
   ],
   
   // スケジュール設定
@@ -14,6 +13,7 @@
   ],
   "automerge": false,  // 自動マージを無効化
   "dependencyDashboard": false,  // 依存関係ダッシュボードを有効化
+  prConcurrentLimit: 0, // 同時に開くPR数:無制限
   
   // モノレポ対応：プロジェクト間で同じ依存関係を1つのPRにまとめる
   "additionalBranchPrefix": "",
@@ -21,13 +21,11 @@
   "packageRules": [
     {
       "matchManagers": ["npm"],
-      "matchPaths": [
+      "matchFileNames": [
         "project1/**",
         "project2/**"
       ],
-      "enabled": true
-      // この設定により、project1とproject2で同じ依存関係がある場合、
-      // 1つのPRにまとめられます（例：reactのアップデートは両プロジェクトを含む1つのPR）
+      "enabled": true,
     }
   ]
 }
