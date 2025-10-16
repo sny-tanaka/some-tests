@@ -1,0 +1,17 @@
+name: Renovate
+on: workflow_dispatch
+jobs:
+    renovate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3.3.0
+
+            - name: Self-hosted Renovate
+              uses: renovatebot/github-action
+              with:
+                  configurationFile: renovate.json5
+                  token: ${{ secrets.RENOVATE_PAT }}
+              env:
+                  RENOVATE_USERNAME: 'renovate[bot]'
+                  RENOVATE_REPOSITORIES: 'sny-tanaka/some-tests'
